@@ -9,6 +9,16 @@
     "name": {
       "type": "string",
       "required": true
+    },
+    "population": {
+      "type": "number",
+      "required": true
+    },
+    "tas": {
+      "type": [
+        "number"
+      ],
+      "required": true
     }
   },
   "validations": [],
