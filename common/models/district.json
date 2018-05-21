@@ -22,7 +22,16 @@
     }
   },
   "validations": [],
-  "relations": {},
+  "relations": {
+    "districtTa": {
+      "type": "hasMany",
+      "model": "TA",
+      "foreignKey": "districtId",
+      "options": {
+        "nestRemoting": true
+      }
+    }
+  },
   "acls": [],
   "methods": {}
 }

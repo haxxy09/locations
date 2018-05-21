@@ -9,16 +9,35 @@
     "name": {
       "type": "string",
       "required": true
-    },
-    "villages": {
-      "type": [
-        "number"
-      ],
-      "required": true
     }
   },
   "validations": [],
-  "relations": {},
+  "relations": {
+    "district": {
+      "type": "belongsTo",
+      "model": "District",
+      "foreignKey": "",
+      "options": {
+        "nestRemoting": true
+      }
+    },
+    "zone": {
+      "type": "belongsTo",
+      "model": "zone",
+      "foreignKey": "",
+      "options": {
+        "nestRemoting": true
+      }
+    },
+    "villages": {
+      "type": "hasMany",
+      "model": "Village",
+      "foreignKey": "",
+      "options": {
+        "nestRemoting": true
+      }
+    }
+  },
   "acls": [],
   "methods": {}
 }

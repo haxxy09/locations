@@ -49,5 +49,9 @@
   "Village": {
     "dataSource": "db",
     "public": true
+  },
+  "zone": {
+    "dataSource": "db",
+    "public": true
   }
 }

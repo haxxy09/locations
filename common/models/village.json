@@ -12,7 +12,16 @@
     }
   },
   "validations": [],
-  "relations": {},
+  "relations": {
+    "ta": {
+      "type": "belongsTo",
+      "model": "TA",
+      "foreignKey": "",
+      "options": {
+        "nestRemoting": true
+      }
+    }
+  },
   "acls": [],
   "methods": {}
 }
