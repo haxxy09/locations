@@ -3,7 +3,7 @@
   "base": "PersistedModel",
   "idInjection": true,
   "options": {
-    "validateUpsert": true
+    "validateUpsert": false
   },
   "properties": {
     "name": {
@@ -27,6 +27,14 @@
       "type": "hasMany",
       "model": "TA",
       "foreignKey": "districtId",
+      "options": {
+        "nestRemoting": true
+      }
+    },
+    "zone": {
+      "type": "belongsTo",
+      "model": "zone",
+      "foreignKey": "",
       "options": {
         "nestRemoting": true
       }
