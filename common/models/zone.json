@@ -1,0 +1,32 @@
+{
+  "name": "zone",
+  "plural": "zones",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": false
+  },
+  "properties": {
+    "name": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "tA": {
+      "type": "hasMany",
+      "model": "TA",
+      "foreignKey": ""
+    },
+    "districts": {
+      "type": "hasMany",
+      "model": "District",
+      "foreignKey": "",
+      "options": {
+        "nestRemoting": true
+      }
+    }
+  },
+  "acls": [],
+  "methods": {}
+}
