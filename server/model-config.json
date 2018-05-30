@@ -50,7 +50,7 @@
     "dataSource": "db",
     "public": true
   },
-  "zone": {
+  "Zone": {
     "dataSource": "db",
     "public": true
   }

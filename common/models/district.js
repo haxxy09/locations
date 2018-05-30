@@ -2,23 +2,27 @@
 
 module.exports = function(District) {
   // District.validatesUniquenessOf("name");
-  District.getName = function(keyword, cb) {
-    District.find(keyword, function(err, instance) {
-      var response = "result" + instance.name;
-      cb(null, response);
-      console.log(response);
+  District.searchDistrict = function(keyword, cb) {
+    var pattern = new RegExp('.*'+keyword+'.*', "i");
+    let query = {
+      where: {name: {like: pattern}}
+    };
+    District.find(query, function(err, instance) {
+      // var response = "result" + instance.name;
+      cb(null, instance);
+      // console.log(response);
     });
   };
   District.remoteMethod(
-    'getName', {
+    'searchDistrict', {
       http: {
-        path: '/getname',
+        path: '/searchDistrict',
         verb: 'get'
       },
       accepts: {arg: 'keyword', type: 'string', http: {source: 'query'}},
       returns: {
         arg: 'name',
-        type: 'string'
+        type: 'object'
       }
     }
   );

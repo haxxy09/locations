@@ -1,5 +1,5 @@
 {
-  "name": "zone",
+  "name": "Zone",
   "plural": "zones",
   "base": "PersistedModel",
   "idInjection": true,
