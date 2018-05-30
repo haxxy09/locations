@@ -3,14 +3,14 @@
     "name": "db",
     "connector": "memory"
   },
-  "mysqlDs": {
+  "postgrizo": {
     "host": "localhost",
-    "port": 3306,
+    "port": 5432,
     "url": "",
-    "database": "locations",
-    "password": "",
-    "name": "mysqlDs",
-    "user": "root",
-    "connector": "mysql"
+    "database": "locationz",
+    "password": "legendalive",
+    "name": "postgrizo",
+    "user": "legendowski",
+    "connector": "postgresql"
   }
 }

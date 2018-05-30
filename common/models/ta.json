@@ -23,7 +23,7 @@
     },
     "zone": {
       "type": "belongsTo",
-      "model": "zone",
+      "model": "Zone",
       "foreignKey": "",
       "options": {
         "nestRemoting": true

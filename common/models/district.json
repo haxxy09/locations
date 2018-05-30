@@ -12,13 +12,13 @@
     },
     "population": {
       "type": "number",
-      "required": true
+      "required": false
     },
     "tas": {
       "type": [
         "number"
       ],
-      "required": true
+      "required": false
     }
   },
   "validations": [],
@@ -33,7 +33,7 @@
     },
     "zone": {
       "type": "belongsTo",
-      "model": "zone",
+      "model": "Zone",
       "foreignKey": "",
       "options": {
         "nestRemoting": true
