@@ -19,6 +19,9 @@
         "number"
       ],
       "required": false
+    },
+    "keywords": {
+      "type": ["array"]
     }
   },
   "validations": [],

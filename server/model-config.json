@@ -39,19 +39,19 @@
     "dataSource": null
   },
   "District": {
-    "dataSource": "postgrizo",
+    "dataSource": "db",
     "public": true
   },
   "TA": {
-    "dataSource": "postgrizo",
+    "dataSource": "db",
     "public": true
   },
   "Village": {
-    "dataSource": "postgrizo",
+    "dataSource": "db",
     "public": true
   },
   "Zone": {
-    "dataSource": "postgrizo",
+    "dataSource": "db",
     "public": true
   }
 }

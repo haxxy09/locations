@@ -3,9 +3,9 @@
 module.exports = function(District) {
   // District.validatesUniquenessOf("name");
   District.searchDistrict = function(keyword, cb) {
-    var pattern = new RegExp('.*'+keyword+'.*', "i");
+    // var pattern = new RegExp('.*'+keyword+'.*', "i");
     let query = {
-      where: {name: {like: pattern}}
+      where: {keywords: {inq: [keyword]}}
     };
     District.find(query, function(err, instance) {
       // var response = "result" + instance.name;
@@ -21,7 +21,7 @@ module.exports = function(District) {
       },
       accepts: {arg: 'keyword', type: 'string', http: {source: 'query'}},
       returns: {
-        arg: 'name',
+        arg: 'results',
         type: 'object'
       }
     }
