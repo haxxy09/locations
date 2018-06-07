@@ -13,14 +13,17 @@
   },
   "validations": [],
   "relations": {
-    "tA": {
-      "type": "hasMany",
-      "model": "TA",
-      "foreignKey": ""
-    },
     "districts": {
       "type": "hasMany",
       "model": "District",
+      "foreignKey": "",
+      "options": {
+        "nestRemoting": true
+      }
+    },
+    "tas": {
+      "type": "hasMany",
+      "model": "TA",
       "foreignKey": "",
       "options": {
         "nestRemoting": true

@@ -21,14 +21,6 @@
         "nestRemoting": true
       }
     },
-    "zone": {
-      "type": "belongsTo",
-      "model": "Zone",
-      "foreignKey": "",
-      "options": {
-        "nestRemoting": true
-      }
-    },
     "villages": {
       "type": "hasMany",
       "model": "Village",
