@@ -1,5 +1,5 @@
 module.exports = function(app) {
-  app.dataSources.db.automigrate('Zone', function(err) {
+  app.dataSources.postgrizo.automigrate('Zone', function(err) {
     if (err) throw err;
 
     app.models.Zone.create([
@@ -13,7 +13,7 @@ module.exports = function(app) {
       console.log('Models created: \n', Zone);
     });
   });
-  app.dataSources.db.automigrate('District', function(err) {
+  app.dataSources.postgrizo.automigrate('District', function(err) {
     if (err) throw err;
     app.models.District.create([
       {'name': 'Balaka', 'keywords': ['BLK'], 'zoneId': 1},
@@ -46,6 +46,20 @@ module.exports = function(app) {
       {'name': 'Rumphi', 'keywords': ['RU'], 'zoneId': 5}], function(err, District) {
       if (err) throw err;
       console.log('models created: \n', District);
+    });
+  });
+  app.dataSources.postgrizo.automigrate('TA', function (err) {
+    if (err) throw err;
+    app.models.TA.create([
+      {'name': 'Machinjiri', 'districtId': 3, 'zoneId': 2},
+      {'name': 'Makanjira', 'districtId': 21, 'zoneId': 1 },
+      {'name': 'Tambo', 'districtId': 19, 'zoneId': 2},
+      {'name': 'Nthezemu', 'districtId': 27, 'zoneId': 5},
+      {'name': 'Kachindamoto', 'districtId': 5, 'zoneId': 4},
+      {'name': 'Machinjiri', 'districtId': 4, 'zoneId': 2}
+    ], function(err, TA) {
+      if (err) throw err;
+      console.log('models created: \n', TA);
     });
   });
 };

@@ -3,12 +3,12 @@
 module.exports = function(District) {
   // District.validatesUniquenessOf("name");
   District.searchDistrict = function(keyword, cb) {
-    var pattern = new RegExp('.*'+keyword+'.*', "i");
+    // var pattern = new RegExp('.*' + keyword + '.*', 'i');
     let query = {
       where: {
         or: [
           {keywords: {inq: [keyword]}},
-          {name: {like: pattern}}
+          {name: keyword}
         ]
       }
     };
