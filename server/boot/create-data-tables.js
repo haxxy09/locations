@@ -1,5 +1,5 @@
 module.exports = function(app) {
-  app.dataSources.postgrizo.automigrate('Zone', function(err) {
+  app.dataSources.db.automigrate('Zone', function(err) {
     if (err) throw err;
 
     app.models.Zone.create([
@@ -13,7 +13,7 @@ module.exports = function(app) {
       console.log('Models created: \n', Zone);
     });
   });
-  app.dataSources.postgrizo.automigrate('District', function(err) {
+  app.dataSources.db.automigrate('District', function(err) {
     if (err) throw err;
     app.models.District.create([
       {'name': 'Balaka', 'keywords': ['BLK'], 'zoneId': 1},
@@ -48,7 +48,7 @@ module.exports = function(app) {
       console.log('models created: \n', District);
     });
   });
-  app.dataSources.postgrizo.automigrate('TA', function (err) {
+  app.dataSources.db.automigrate('TA', function (err) {
     if (err) throw err;
     app.models.TA.create([
       {'name': 'Machinjiri', 'districtId': 3, 'zoneId': 2},
