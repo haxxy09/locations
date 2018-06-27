@@ -8,10 +8,7 @@ module.exports = function(District) {
       where: {
         or: [
           {keywords: {inq: [keyword]}},
-          {name: keyword}
-        ]
-      }
-    };
+          {name: keyword}]}};
     District.find(query, function(err, instance) {
       // var response = "result" + instance.name;
       cb(null, instance);
@@ -22,13 +19,10 @@ module.exports = function(District) {
     'searchDistrict', {
       http: {
         path: '/searchDistrict',
-        verb: 'get'
-      },
+        verb: 'get'},
       accepts: {arg: 'keyword', type: 'string', http: {source: 'query'}},
       returns: {
         arg: 'results',
-        type: 'object'
-      }
-    }
+        type: 'object'}}
   );
 };

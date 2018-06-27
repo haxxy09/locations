@@ -1,3 +1,4 @@
+'use strict';
 module.exports = function(app) {
   app.dataSources.db.automigrate('Zone', function(err) {
     if (err) throw err;
@@ -7,8 +8,7 @@ module.exports = function(app) {
       {'name': 'South West'},
       {'name': 'Central East'},
       {'name': 'Central West'},
-      {'name': 'North'}
-    ], function(err, Zone) {
+      {'name': 'North'}], function(err, Zone) {
       if (err) throw err;
       console.log('Models created: \n', Zone);
     });
@@ -18,7 +18,8 @@ module.exports = function(app) {
     app.models.District.create([
       {'name': 'Balaka', 'keywords': ['BLK'], 'zoneId': 1},
       {'name': 'Chikhwawa', 'keywords': ['CK'], 'zoneId': 2},
-      {'name': 'Blantyre', 'keywords': ['rural', 'urban', 'city', 'BT'], 'zoneId': 2},
+      {'name': 'Blantyre', 'keywords': ['rural',
+        'urban', 'city', 'BT'], 'zoneId': 2},
       {'name': 'Chiradzulu', 'keywords': ['CZ'], 'zoneId': 2},
       {'name': 'Dedza', 'keywords': ['DZ'], 'zoneId': 4},
       {'name': 'Dowa', 'keywords': ['DA'], 'zoneId': 3},
@@ -27,7 +28,8 @@ module.exports = function(app) {
       {'name': 'Machinga', 'keywords': ['MHG'], 'zoneId': 1},
       {'name': 'Chitipa', 'keywords': ['CP'], 'zoneId': 5},
       {'name': 'Karonga', 'keywords': ['KA'], 'zoneId': 5},
-      {'name': 'Lilongwe', 'keywords': ['rural', 'urban', 'city', 'LL'], 'zoneId': 4},
+      {'name': 'Lilongwe',
+        'keywords': ['rural', 'urban', 'city', 'LL'], 'zoneId': 4},
       {'name': 'Mwanza', 'keywords': ['MN'], 'zoneId': 2},
       {'name': 'Mulanje', 'keywords': ['MJ'], 'zoneId': 1},
       {'name': 'Neno', 'keywords': ['NN'], 'zoneId': 2},
@@ -43,23 +45,36 @@ module.exports = function(app) {
       {'name': 'Zomba', 'keywords': ['ZA', 'Municipality'], 'zoneId': 1},
       {'name': 'Ntchisi', 'keywords': ['NS'], 'zoneId': 3},
       {'name': 'Mzimba', 'keywords': ['MZ'], 'zoneId': 5},
-      {'name': 'Rumphi', 'keywords': ['RU'], 'zoneId': 5}], function(err, District) {
-      if (err) throw err;
-      console.log('models created: \n', District);
-    });
+      {'name': 'Rumphi', 'keywords': ['RU'], 'zoneId': 5}],
+       function(err, District) {
+         if (err) throw err;
+         console.log('models created: \n', District);
+       });
   });
-  app.dataSources.db.automigrate('TA', function (err) {
+  app.dataSources.db.automigrate('TA', function(err) {
     if (err) throw err;
     app.models.TA.create([
       {'name': 'Machinjiri', 'districtId': 3, 'zoneId': 2},
-      {'name': 'Makanjira', 'districtId': 21, 'zoneId': 1 },
+      {'name': 'Makanjira', 'districtId': 21, 'zoneId': 1},
       {'name': 'Tambo', 'districtId': 19, 'zoneId': 2},
       {'name': 'Nthezemu', 'districtId': 27, 'zoneId': 5},
       {'name': 'Kachindamoto', 'districtId': 5, 'zoneId': 4},
-      {'name': 'Machinjiri', 'districtId': 4, 'zoneId': 2}
-    ], function(err, TA) {
+      {'name': 'Machinjiri', 'districtId': 4, 'zoneId': 2}], function(err, TA) {
       if (err) throw err;
       console.log('models created: \n', TA);
+    });
+  });
+  app.dataSources.db.automigrate('Village', function(err) {
+    if (err) throw err;
+    app.models.Village.create([
+      {'name': 'Makhetha', 'taId': 1},
+      {'name': 'Madulira', 'taId': 1},
+      {'name': 'Mkandala', 'taId': 3},
+      {'name': 'Bengo', 'taId': 6},
+      {'name': 'Bembeke', 'taId': 5},
+      {'name': 'Kanjanga', 'taId': 4}], function(err, Village) {
+      if (err) throw err;
+      console.log('models created: \n', Village);
     });
   });
 };
