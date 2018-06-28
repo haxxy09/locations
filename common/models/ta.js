@@ -15,14 +15,15 @@ module.exports = function(Ta) {
     });
   };
   Ta.possibleVillages = function(keyword, cb) {
-    var pattern = new RegExp('.*' + keyword + '.*', 'i');
+    // var pattern = new RegExp('.*' + keyword + '.*', 'i');
     let query = {
-      where: {name: {like: pattern}},
+      where: {name: {like: keyword}},
     };
     Ta.find(query, function(err, instance) {
       const ids = instance.map(ta => ta.id);
+      console.log(ids);
       server.models.Village
-      .find({where: {id: {inq: ids}}}, function(err, villages) {
+      .find({where: {taId: {inq: ids}}}, function(err, villages) {
         cb(null, villages);
       });
     });
